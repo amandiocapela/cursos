@@ -1,9 +1,9 @@
 # Função para solicitar ao usuário e criar seu conjunto
 def qualConjunto():
     global Q
-    Q = int(input("Quanto elementos terá seu conjunto? "))
+    Q = int(input("Quantos elementos seu conjunto terá? "))
     for elemento in range(0, Q):
-        conjunto.append(input("Escreva o elemento: "))
+        conjunto.append(input("Escreva um elemento: "))
     return conjunto
 
 # Criar 1ª parte Subconjunto
