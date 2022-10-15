@@ -19,7 +19,7 @@ def subConj2(current, conj):
     return [current]
 
 # Célula 3
-# Início do Prgrama
+# Início do Programa
 conjunto = []
 conj = conjunto
 qualConjunto()
