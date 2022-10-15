@@ -28,4 +28,4 @@ print(f"O conjunto digitado pelo usuário foi: {conjunto}")
 qtdSubConj = 2**Q
 print(f"A quantidade de subconjuntos é: {qtdSubConj}")
 
-print(sorted(subConj1(conj)))
+print(f"Os subconjuntos são: {sorted(subConj1(conj))}")
