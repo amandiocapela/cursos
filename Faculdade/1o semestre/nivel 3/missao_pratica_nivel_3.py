@@ -1,3 +1,4 @@
+# Cécula 1
 # Função para solicitar ao usuário e criar seu conjunto
 def qualConjunto():
     global Q
@@ -6,6 +7,7 @@ def qualConjunto():
         conjunto.append(input("Escreva um elemento: "))
     return conjunto
 
+# Cécula 2
 # Criar 1ª parte Subconjunto
 def subConj1(subConj):
     return subConj2([],subConj)
@@ -16,7 +18,7 @@ def subConj2(current, conj):
         return subConj2(current,conj[1:]) + subConj2(current+[conj[0]],conj[1:])
     return [current]
 
-
+# Célula 3
 # Início do Prgrama
 conjunto = []
 conj = conjunto
