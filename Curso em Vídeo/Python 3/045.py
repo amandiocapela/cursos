@@ -1,6 +1,6 @@
-from random import randrange
+from random import randint
 
-computador = randrange(1, 4)
+computador = randint(1, 3)
 print('''[ 1 ] Pedra
 [ 2 ] Papel
 [ 3 ] Tesoura''')
