@@ -2,7 +2,6 @@ n = eval(input("Digite um número\n"))
 
 nresto = str(n % 2)
 nint = n // 2
-numero_base_binaria = list
 
 while nint != 0:
     nresto = nresto + str(nint % 2)
