@@ -20,4 +20,3 @@ print('-' * 10)
 c1.gerarSaldo()
 print('-' * 10)
 c1.extrato.extrato(c1.numero)
-
