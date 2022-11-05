@@ -1,19 +1,35 @@
-# Classe para Despesas
-class Despesas:
-    def __init__(self, tipoDespesa, valorDespesa):
-        self.tipoDespesa = tipoDespesa
-        self.valorDespesa = valorDespesa
+import matplotlib.pyplot as plt
 
-listaDespesas = []
-dicDespesas = {}
+
+class Grafico:
+    def __init__(self, data, item, cor, label):
+        self.data = data
+        self.item = item
+        self.cor = str(cor)
+        self.label = str(label)
+
+    def gerarelementos(self):
+        plt.plot(self.data, self.item, str(self.cor), marker='o', label=str(self.label))
+
+    @staticmethod
+    def gerargrafico():
+        plt.title('Gráfico de Despesas')
+        plt.ylabel('Despesa em R$')
+        plt.xlabel('Dia')
+        plt.legend()
+        plt.show()
+
+
+dia = []
+alimentacao = []
+vestuario = []
+transporte = []
 
 while True:
-    dicDespesas['Dia'] = int(input('Qual o dia? '))
-    dicDespesas['Alimentação'] = int('Valor Gasto com Alimentação: R$')
-    dicDespesas['Vestuário'] = int('Valor Gasto com Vestuário: R$')
-    dicDespesas['Transporte'] = int('Valor Gasto com Transporte: R$')
-    listaDespesas.append(dicDespesas.copy())
-    dicDespesas.clear()
+    dia.append(int(input('Qual o dia? ')))
+    alimentacao.append(float(input('Valor Gasto com Alimentação: R$')))
+    vestuario.append(float(input('Valor Gasto com Vestuário: R$')))
+    transporte.append(float(input('Valor Gasto com Transporte: R$')))
     while True:
         r = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
         if r in 'SN':
@@ -21,3 +37,12 @@ while True:
         print('ERRO! Responda apenas S ou N.')
     if r == 'N':
         break
+
+
+a = Grafico(dia, alimentacao, 'b', 'Alimentação')
+v = Grafico(dia, vestuario, 'r', 'Vestuário')
+t = Grafico(dia, transporte, 'g', 'Transporte')
+a.gerarelementos()
+v.gerarelementos()
+t.gerarelementos()
+Grafico.gerargrafico()
