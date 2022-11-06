@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
 
 class Grafico:
@@ -10,6 +12,9 @@ class Grafico:
 
     def gerarelementos(self):
         plt.plot(self.data, self.item, str(self.cor), marker='o', label=str(self.label))
+
+    def geraregrecao(self):
+        plt.plot(self.data, self.item, str(self.cor), label=str(self.label))
 
     @staticmethod
     def gerargrafico():
@@ -38,11 +43,20 @@ while True:
     if r == 'N':
         break
 
+sorted(dia)
+
+x = np.array(dia).reshape((-1, 1))
+model = LinearRegression()
+model.fit(x, alimentacao)
+alimentacao_pred = model.predict(x)
+
 
 a = Grafico(dia, alimentacao, 'b', 'Alimentação')
 v = Grafico(dia, vestuario, 'r', 'Vestuário')
 t = Grafico(dia, transporte, 'g', 'Transporte')
+ap = Grafico(dia, alimentacao_pred, 'k', 'Regr. Linear Alimentação')
 a.gerarelementos()
 v.gerarelementos()
 t.gerarelementos()
+ap.geraregrecao()
 Grafico.gerargrafico()
