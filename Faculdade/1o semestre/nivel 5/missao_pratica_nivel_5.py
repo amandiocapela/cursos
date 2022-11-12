@@ -41,6 +41,7 @@ for c in pont:
 palavras = " ".join(p for p in num)
 wordcloud = WordCloud(background_color="black").generate(palavras)
 
+# Informar itens gerados
 print('Lista completa gerada:')
 print(leitura)
 sleep(1)
@@ -52,6 +53,7 @@ print(pont)
 print('Número posição por extenso:')
 print(num)
 
+# Gerar gráficos
 plt.subplot(2, 1, 1)
 plt.hist(sorted(pont), label='Histograma das Pontuações')
 plt.xlabel('Pontuações')
