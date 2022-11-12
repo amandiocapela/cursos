@@ -15,7 +15,6 @@ num = []
 # Quantos nomes e números deverão ser criados aleatóriamente
 n = int(input('Quantos nomes gostaria de gerar? '))
 print('Gerando nomes e números aleatórios...')
-sleep(2)
 
 # Gerar nomes e números aleatórios dentro de um arquivo txt
 fake = Faker()
@@ -42,14 +41,16 @@ palavras = " ".join(p for p in num)
 wordcloud = WordCloud(background_color="black").generate(palavras)
 
 # Informar itens gerados
+sleep(1)
 print('Lista completa gerada:')
 print(leitura)
-sleep(1)
+sleep(0.5)
 print('Nomes da lista gerada:')
 print(nomes)
-sleep(1)
+sleep(0.5)
 print('Posição equivalente dos nomes gerados:')
 print(pont)
+sleep(0.5)
 print('Número posição por extenso:')
 print(num)
 
