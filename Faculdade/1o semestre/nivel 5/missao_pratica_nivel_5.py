@@ -32,9 +32,6 @@ for c in range(0, (n*2), 2):
     nomes.append(leitura[c])
     pont.append(leitura[c + 1])
 
-# Organizar a lista pont
-pont.sort()
-pont.sort(key=len)
 
 # Escrever o número por extenso e lançar em uma lista
 for c in pont:
@@ -57,6 +54,10 @@ print(pont)
 sleep(0.5)
 print('Número posição por extenso:')
 print(num)
+
+# Organizar a lista pont
+pont.sort()
+pont.sort(key=len)
 
 # Gerar gráficos
 plt.subplot(2, 1, 1)
