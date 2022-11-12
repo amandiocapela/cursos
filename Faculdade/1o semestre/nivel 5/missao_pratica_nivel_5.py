@@ -32,6 +32,10 @@ for c in range(0, (n*2), 2):
     nomes.append(leitura[c])
     pont.append(leitura[c + 1])
 
+# Organizar a lista pont
+pont.sort()
+pont.sort(key=len)
+
 # Escrever o número por extenso e lançar em uma lista
 for c in pont:
     num.append(num2words(c, lang='pt-br').title())
@@ -56,7 +60,7 @@ print(num)
 
 # Gerar gráficos
 plt.subplot(2, 1, 1)
-plt.hist(sorted(pont), label='Histograma das Pontuações')
+plt.hist(pont, label='Histograma das Pontuações')
 plt.xlabel('Pontuações')
 plt.ylabel('Probabilidade')
 plt.grid(f'{Counter(pont)}')
