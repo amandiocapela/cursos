@@ -6,37 +6,43 @@ from collections import Counter
 from num2words import num2words
 from wordcloud import WordCloud
 
-
+# Criação de listas que serão usadas
+leitura = []
 nomes = []
 pont = []
 num = []
 
-fake = Faker()
+# Quantos nomes e números deverão ser criados aleatóriamente
 n = int(input('Quantos nomes gostaria de gerar? '))
 print('Gerando nomes e números aleatórios...')
 sleep(2)
 
+# Gerar nomes e números aleatórios dentro de um arquivo txt
+fake = Faker()
 with open('dados.txt', 'w') as arquivo:
     for c in range(0, n):
         arquivo.write(f'{fake.name()},{str(randint(1, 10))},')
 
-
+# Ler arquivo txt e lançar em uma lista para ser manipulado
 with open('dados.txt', 'r') as arquivo:
-    a = arquivo.read().split(',')
-a.pop()
+    leitura = arquivo.read().split(',')
+leitura.pop()  # Remover o último item da lista sendo um lixo gerado pela leitura
 
+# Lançar nas listas separadas de nome e números (pontuações)
 for c in range(0, (n*2), 2):
-    nomes.append(a[c])
-    pont.append(a[c+1])
+    nomes.append(leitura[c])
+    pont.append(leitura[c + 1])
 
+# Escrever o número por extenso e lançar em uma lista
 for c in pont:
     num.append(num2words(c, lang='pt-br').title())
 
+# Gerar uma string única para o wordcloud gerar a núvem
 palavras = " ".join(p for p in num)
 wordcloud = WordCloud(background_color="black").generate(palavras)
 
 print('Lista completa gerada:')
-print(a)
+print(leitura)
 sleep(1)
 print('Nomes da lista gerada:')
 print(nomes)
