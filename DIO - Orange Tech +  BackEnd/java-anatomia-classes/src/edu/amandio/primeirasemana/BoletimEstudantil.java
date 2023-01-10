@@ -1,4 +1,4 @@
-import javax.lang.model.util.ElementScanner14;
+package edu.amandio.primeirasemana;
 
 public class BoletimEstudantil {
     public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package edu.amandio.segundasemana;
 public class MinhaClasse {
     public static void main(String[] args) {
 
